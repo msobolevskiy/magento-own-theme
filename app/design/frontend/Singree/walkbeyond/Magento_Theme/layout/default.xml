@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.panel.wrapper" remove="true" />
+
+        <referenceContainer name="page.bottom">
+            <container name="subscribe.new" />
+        </referenceContainer>
+
+
+
+        <referenceContainer name="footer">
+            <container name="containerForLinks" before="cms_footer_links_container">
+
+                <block template="Magento_Theme::threelinks.phtml"></block>
+
+            </container>
+        </referenceContainer>
+
+
+        <referenceContainer name="footer">
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                <arguments>
+                    <argument name="logo_img_width" xsi:type="number">189</argument>
+                    <argument name="logo_img_height" xsi:type="number">64</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+
+
+        <referenceContainer name="page.bottom.container">
+            <container name="subscride.area" htmlTag="div" htmlClass="text-subscride" before="-">
+
+                <block class="Magento\Framework\View\Element\Text" name="about_us.label">
+                    <arguments>
+                        <argument translate="true" name="text" xsi:type="string">Stay Connected! Sing up for emails and enjoy!</argument>
+                    </arguments>
+                </block>
+
+            </container>
+        </referenceContainer>
+
+
+        <referenceContainer name="footer">
+            <container name="boxforicons" after="cms_footer_links_container">
+
+                <block template="Magento_Theme::iconsbox.phtml"></block>
+
+            </container>
+        </referenceContainer>
+
+
+        <referenceContainer name="footer">
+            <block  template="Magento_Theme::js-container.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="top.container">
+            <container name="containerForSaleLine" before="cms_footer_links_container">
+
+                <block template="Magento_Theme::saleline.phtml"></block>
+
+            </container>
+        </referenceContainer>
+
+
+
+        
+
+
+        <move element="form.subscribe" destination="subscribe.new" after="-"/>
+
+    </body>
+</page>
+
+
+
+<!-- cms_footer_links_container -->
